@@ -1,0 +1,121 @@
+body {
+  font-family: 'Georgia', serif;
+  background: linear-gradient(180deg, #ffeaf1, #ffd6eb, #fff5f8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+}
+
+.card {
+  width: 350px;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(255, 105, 180, 0.2);
+  padding: 25px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 1s ease;
+}
+
+.card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.ribbon {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(45deg, #ff7eb9, #ffb6c1);
+  border-radius: 50%;
+  top: -30px;
+  left: -30px;
+  transform: rotate(-15deg);
+  opacity: 0.8;
+}
+
+.ribbon::after {
+  content: '';
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(45deg, #ffb6c1, #ffcce1);
+  border-radius: 50%;
+  top: 15px;
+  left: 25px;
+}
+
+.photo-space {
+  width: 120px;
+  height: 120px;
+  background-color: #ffe4ef;
+  border: 2px dashed #ffb6c1;
+  border-radius: 100%;
+  margin: 15px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ff69b4;
+  font-size: 13px;
+  overflow: hidden;
+}
+
+.photo-space img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 100%;
+}
+
+h1 {
+  font-family: 'Brush Script MT', cursive;
+  color: #ff69b4;
+  font-size: 2em;
+  margin: 10px 0 0;
+}
+
+.message {
+  font-size: 15px;
+  color: #555;
+  margin: 15px 0;
+  line-height: 1.6;
+}
+
+.hearts {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.heart {
+  color: #ff8fab;
+  font-size: 20px;
+  margin: 0 4px;
+  opacity: 0.8;
+  transition: transform 0.4s ease;
+}
+
+.heart:hover {
+  transform: scale(1.5) rotate(10deg);
+}
+
+.petal {
+  position: absolute;
+  font-size: 16px;
+  color: #ffb6c1;
+  opacity: 0.8;
+  animation: float 6s infinite ease-in-out;
+}
+
+@keyframes float {
+  0% { transform: translateY(0) rotate(0); opacity: 1; }
+  50% { transform: translateY(-20px) rotate(15deg); opacity: 0.7; }
+  100% { transform: translateY(0) rotate(0); opacity: 1; }
+}
